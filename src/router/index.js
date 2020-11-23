@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '../components/Home'
+import GMap from '../components/GMap'
 import Profile from '../components/Profile'
 import Signup from '../components/Signup'
 import Login from '../components/Login'
@@ -12,8 +12,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
-      component: Home
+      name: 'GMap',
+      component: GMap
     },
     {
       path: '/profile/:slug',

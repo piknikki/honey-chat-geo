@@ -1,13 +1,21 @@
 <template>
   <div id="app">
-    <img class="logo" src="./assets/logo.png">
+    <Navbar />
     <router-view/>
   </div>
 </template>
 
 <script>
+import Navbar from "./components/Navbar";
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {Navbar},
+  data () {
+    return {
+
+    }
+  }
 }
 </script>
 
@@ -21,7 +29,4 @@ export default {
   margin-top: 60px;
 }
 
-.logo {
-  width: 100px;
-}
 </style>
