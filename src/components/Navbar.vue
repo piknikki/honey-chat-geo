@@ -1,6 +1,6 @@
 <template>
   <div class="navbar">
-    <nav class="transparent">
+    <nav class="white">
       <div class="container">
         <span class="left">
            <img class="logo left" src="../assets/logo.png">
@@ -8,7 +8,6 @@
           Honey Chat
         </a>
         </span>
-
         <ul class="right nav-links">
           <li><a href="">Signup</a></li>
           <li><a href="">Login</a></li>
@@ -30,6 +29,11 @@ export default {
 </script>
 
 <style>
+nav {
+  height: 100px;
+  padding-top: 20px;
+}
+
 nav .brand-logo {
   font-size: 3em;
 }
