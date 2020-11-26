@@ -40,6 +40,11 @@ export default {
       email: null,
       password: null
     }
+  },
+  methods: {
+    signUp() {
+      console.log('button is working')
+    }
   }
 }
 </script>
