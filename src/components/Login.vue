@@ -9,18 +9,21 @@
           </label>
           <input type="email" id="email" v-model="email">
         </div>
-        <div class="field">
-          <label for="password">
-            Password
-          </label>
-          <input type="password" id="password" v-model="password">
-        </div>
+
         <div class="field">
           <label for="alias">
             Alias
           </label>
           <input type="text" id="alias" v-model="alias">
         </div>
+
+        <div class="field">
+          <label for="password">
+            Password
+          </label>
+          <input type="password" id="password" v-model="password">
+        </div>
+
         <div class="field">
           <button class="btn waves-effect waves-light amber accent-4">Log me in!</button>
         </div>
