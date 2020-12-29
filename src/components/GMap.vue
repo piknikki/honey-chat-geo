@@ -1,8 +1,13 @@
 <template>
   <div class="map">
-    <h3>Hello this is the main landing page</h3>
 <!--    <div class="google-map" id="map">-->
 <!--    </div>-->
+    <h1 class="name">Honey Chat</h1>
+    <div class="tagline">
+     <img class="bee-locator" src="../assets/beelocator.png">
+     <span class="valign-center"><h4>Where my bees at??</h4></span>
+      <img class="bee-locator" src="../assets/beelocator.png">
+    </div>
   </div>
 </template>
 
@@ -33,15 +38,23 @@ export default {
 </script>
 
 <style scoped>
-.google-map {
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  background: #fff;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
+/*.google-map {*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  margin: 0 auto;*/
+/*  background: #fff;*/
+/*  position: absolute;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  z-index: -1;*/
+/*}*/
+
+.bee-locator {
+  width: 50px;
+}
+
+h4 {
+  display: inline;
 }
 
 </style>
