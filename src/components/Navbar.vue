@@ -4,9 +4,9 @@
       <div class="container">
         <span class="left">
            <img class="logo left" src="../assets/logo.png">
-        <a href="/" class="brand-logo name amber-text text-darken-3">
+        <router-link :to="{ name: 'GMap' }"  class="brand-logo name amber-text text-darken-3">
           Honey Chat
-        </a>
+        </router-link>
         </span>
         <ul class="right nav-links">
           <li><router-link :to="{ name: 'Signup' }">Signup</router-link></li>
@@ -32,7 +32,7 @@ export default {
     logOut() {
       firebase.auth().signOut()
       .then(() => {
-        this.$router.push({ name: 'Signup' })
+        this.$router.push({ name: 'Login' })
       })
     }
   }

@@ -17,7 +17,7 @@
           <input type="password" id="password" v-model="password">
         </div>
 
-        <p class="red-text center" v-if="feedback" ></p>
+        <p class="red-text center" v-if="feedback" >{{ feedback }}</p>
         <div class="field">
           <button class="btn waves-effect waves-light amber accent-4">Log me in!</button>
         </div>
@@ -44,15 +44,16 @@ export default {
     logIn() {
       if (this.email && this.password) {
         firebase.auth().signInWithEmailAndPassword(this.email, this.password)
-        .then(cred => {
-          console.log(cred.user)
-        })
         .then(() => {
-          this.$router.push('GMap')
+          // console.log(cred.user)
+          this.$router.push({ path: '/' })
         })
         .catch(err => {
-          alert(err.message)
+          this.feedback = err.message
         })
+        this.feedback = null
+      } else {
+        this.feedback = 'Please fill in both fields'
       }
     }
   }
