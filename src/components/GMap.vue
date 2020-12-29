@@ -1,8 +1,8 @@
 <template>
   <div class="map">
-    <div class="google-map" id="map">
-
-    </div>
+    <h3>Hello this is the main landing page</h3>
+<!--    <div class="google-map" id="map">-->
+<!--    </div>-->
   </div>
 </template>
 
@@ -15,20 +15,20 @@ export default {
       lng: -2
     }
   },
-  methods: {
-    renderMap() {
-      const map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: this.lat, lng: this.lng},
-        zoom: 6,
-        maxZoom: 15,
-        minZoom: 3,
-        streetViewControl: false
-      })
-    }
-  },
-  mounted() {
-    this.renderMap()
-  }
+  // methods: {
+  //   renderMap() {
+  //     const map = new google.maps.Map(document.getElementById('map'), {
+  //       center: {lat: this.lat, lng: this.lng},
+  //       zoom: 6,
+  //       maxZoom: 15,
+  //       minZoom: 3,
+  //       streetViewControl: false
+  //     })
+  //   }
+  // },
+  // mounted() {
+  //   this.renderMap()
+  // }
 }
 </script>
 

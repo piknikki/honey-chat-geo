@@ -4,13 +4,13 @@
       <div class="container">
         <span class="left">
            <img class="logo left" src="../assets/logo.png">
-        <a href="" class="brand-logo name amber-text text-darken-3">
+        <a href="/" class="brand-logo name amber-text text-darken-3">
           Honey Chat
         </a>
         </span>
         <ul class="right nav-links">
-          <li><a href="">Signup</a></li>
-          <li><a href="">Login</a></li>
+          <li><router-link to="/signup">Signup</router-link></li>
+          <li><router-link to="/login">Login</router-link></li>
         </ul>
       </div>
     </nav>

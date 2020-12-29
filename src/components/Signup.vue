@@ -20,9 +20,10 @@
             Alias
           </label>
           <input type="text" id="alias" v-model="alias">
+          <p class="red-text center" v-if="feedback">{{ feedback }}</p>
         </div>
         <div class="field">
-          <button class="btn waves-effect waves-light amber accent-4">Submit</button>
+          <button class="btn waves-effect waves-light amber accent-4">Sign me up!</button>
         </div>
 
       </form>
@@ -38,12 +39,18 @@ export default {
     return {
       alias: null,
       email: null,
-      password: null
+      password: null,
+      feedback: null
     }
   },
   methods: {
     signUp() {
-      console.log('button is working')
+      if (this.alias) {
+        // slugify the alias
+        // check if it exists on firebase -- already taken?
+      } else {
+        this.feedback = 'You must enter an alias.'
+      }
     }
   }
 }
