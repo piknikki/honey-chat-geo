@@ -9,12 +9,7 @@
           </label>
           <input type="email" id="email" v-model="email">
         </div>
-        <div class="field">
-          <label for="password">
-            Password
-          </label>
-          <input type="password" id="password" v-model="password">
-        </div>
+
         <div class="field">
           <label for="alias">
             Alias
@@ -22,6 +17,14 @@
           <input type="text" id="alias" v-model="alias">
           <p class="red-text center" v-if="feedback">{{ feedback }}</p>
         </div>
+
+        <div class="field">
+          <label for="password">
+            Password
+          </label>
+          <input type="password" id="password" v-model="password">
+        </div>
+
         <div class="field">
           <button class="btn waves-effect waves-light amber accent-4">Sign me up!</button>
         </div>
@@ -64,10 +67,21 @@ export default {
             this.feedback = 'This alias already exists, please use a different one.'
           } else {
             firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+              .then(cred => {
+                console.log(cred.user)
+                ref.set({
+                  alias: this.alias,
+                  geolocation: null,
+                  user_id: cred.user.uid
+                })
+              })
+              .then(() => {
+                this.$router.push({ name: 'GMap'})
+              })
               .catch(err => {
-              console.log(err)
-              this.feedback = err.message
-            })
+                console.log(err)
+                this.feedback = err.message
+              })
             this.feedback = 'yay that works!!'
           }
         })
