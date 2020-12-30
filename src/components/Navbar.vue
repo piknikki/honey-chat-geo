@@ -12,7 +12,7 @@
         <ul class="right nav-links">
           <li v-if="!user"><router-link :to="{ name: 'Signup' }">Signup</router-link></li>
           <li v-if="!user"><router-link :to="{ name: 'Login' }">Login</router-link></li>
-          <li v-if="user" class="greet">Hey, Bee!</li>
+          <li v-if="user" class="greet">Hey, {{ user.email }}!</li>
           <li v-if="user"><a @click="logOut">Logout</a></li>
         </ul>
       </div>
@@ -39,13 +39,11 @@ export default {
     }
   },
   created() {
-    // check for updates to auth
-    firebase.auth().onAuthStateChanged((cred) => {
-      if (cred) {
-        // console.log(cred)
-        this.user = cred
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.user = user
       } else {
-        this.user = null // reset to null after logging out
+        this.user = null
       }
     })
   }
