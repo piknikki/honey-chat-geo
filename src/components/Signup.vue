@@ -76,7 +76,7 @@ export default {
                 })
               })
               .then(() => {
-                this.$router.push({ name: 'GMap'})
+                this.$router.push({ name: 'GMap', props: this.alias })
               })
               .catch(err => {
                 console.log(err)

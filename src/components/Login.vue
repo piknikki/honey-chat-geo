@@ -28,7 +28,6 @@
 </template>
 
 <script>
-import db from '../firebase/init'
 import firebase from 'firebase'
 
 export default {
@@ -45,7 +44,6 @@ export default {
       if (this.email && this.password) {
         firebase.auth().signInWithEmailAndPassword(this.email, this.password)
         .then(() => {
-          // console.log(cred.user)
           this.$router.push({ path: '/' })
         })
         .catch(err => {
